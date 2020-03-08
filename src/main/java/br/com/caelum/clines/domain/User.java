@@ -1,4 +1,4 @@
-package br.com.caelum.airlines.api.domain;
+package br.com.caelum.clines.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
