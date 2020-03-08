@@ -1,11 +1,11 @@
 DOCKER_COMPOSE_PATH=docker-compose
 DOCKER_COMPOSE_FILE=$(DOCKER_COMPOSE_PATH)/base.yml
-DOCKER_COMPOSE_UP='up -d'
-DOCKER_COMPOSE_DOWN= 'down -v'
-DOCKER_COMPOSE_EXEC= 'exec'
-DOCKER_COMPOSE_PS= 'ps'
-DOCKER_COMPOSE_LOGS= 'logs'
-DOCKER_COMPOSE_BUILD= 'build'
+DOCKER_COMPOSE_UP= up -d
+DOCKER_COMPOSE_DOWN= down -v
+DOCKER_COMPOSE_EXEC= exec
+DOCKER_COMPOSE_PS= ps
+DOCKER_COMPOSE_LOGS= logs
+DOCKER_COMPOSE_BUILD= build
 env ?= local
 
 application/raise: docker/build
@@ -24,7 +24,7 @@ ssh:
 	@ make _docker-compose command="$(DOCKER_COMPOSE_EXEC) $(service) bash"
 
 db/start:
-	@ make _docker-compose command="$(DOCKER_COMPOSE_UP) databse"
+	@ make _docker-compose command="$(DOCKER_COMPOSE_UP) database"
 
 db/stop:
 	@ make _docker-compose command="$(DOCKER_COMPOSE_DOWN) database"

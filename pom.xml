@@ -54,6 +54,12 @@
             <artifactId>spring-cloud-starter-contract-verifier</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>17.0.0</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>
@@ -80,7 +86,7 @@
                     <baseClassMappings>
                         <baseClassMapping>
                             <contractPackageRegex>.*airport.registration.*</contractPackageRegex>
-                            <baseClassFQN>br.com.caelum.clines.airport.registration.AirportRegistrationContractTest</baseClassFQN>
+                            <baseClassFQN>br.com.caelum.clines.api.airport.registration.AirportRegistrationContractTest</baseClassFQN>
                         </baseClassMapping>
                     </baseClassMappings>
                 </configuration>

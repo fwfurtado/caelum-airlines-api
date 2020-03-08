@@ -16,7 +16,7 @@ public class User {
     private Long id;
 
     @NotNull
-    private String name;
+    private String username;
 
     @NotNull
     private String password;
@@ -24,8 +24,8 @@ public class User {
     User() {
     }
 
-    public User(String name, String password) {
-        this.name = name;
+    public User(String username, String password) {
+        this.username = username;
         this.password = password;
     }
 
@@ -33,8 +33,8 @@ public class User {
         return id;
     }
 
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
 
     public String getPassword() {
