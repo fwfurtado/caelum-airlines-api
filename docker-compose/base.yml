@@ -1,1 +1,7 @@
 version: '3.7'
+
+services:
+  api:
+    image: caelum/cline-api
+    build:
+      context: ../

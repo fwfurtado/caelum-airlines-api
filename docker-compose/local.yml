@@ -8,3 +8,10 @@ services:
       POSTGRES_DB: cline
     ports:
       - "5432:5432"
+  api:
+    environment:
+      DB_HOST: database
+      JAVA_OPTS: '-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005'
+    ports:
+    - "5005:5005"
+    - "8080:8080"
