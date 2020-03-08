@@ -26,9 +26,6 @@ ssh:
 db/start:
 	@ make _docker-compose command="$(DOCKER_COMPOSE_UP) database"
 
-db/stop:
-	@ make _docker-compose command="$(DOCKER_COMPOSE_DOWN) database"
-
 docker/build:
 	@ make _docker-compose command=$(DOCKER_COMPOSE_BUILD)
 
@@ -36,5 +33,6 @@ _docker-compose:
 ifndef command
 	$(error "the 'command' arg must be specified.")
 endif
+	$(info command $(command))
 	@ docker-compose -f $(DOCKER_COMPOSE_FILE) -f $(DOCKER_COMPOSE_PATH)/$(env).yml $(command)
 

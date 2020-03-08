@@ -5,7 +5,7 @@ services:
     image: postgres
     environment:
       POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: cline
+      POSTGRES_DB: clines
     ports:
       - "5432:5432"
   api:

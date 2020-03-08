@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:cline}
+    url: jdbc:postgresql://${DB_HOST:k8s.local.technology}:${DB_PORT:5432}/${DB_NAME:clines}
     username: ${DB_USERNAME:postgres}
     password: ${DB_PASSWORD:postgres}
   jpa:
@@ -8,3 +8,16 @@ spring:
       ddl-auto: validate
   jackson:
     property-naming-strategy: SNAKE_CASE
+
+---
+spring:
+  profiles: contract-test
+  datasource:
+    url: jdbc:hsqldb:mem:clines_test;DB_CLOSE_DELAY=-1
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+  flyway:
+    enabled: false

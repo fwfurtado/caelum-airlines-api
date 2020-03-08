@@ -1,20 +1,34 @@
 package br.com.caelum.clines.api.airport.registration;
 
-import br.com.caelum.clines.ClinesApplication;
-import io.restassured.module.mockmvc.RestAssuredMockMvc;
+import br.com.caelum.clines.api.ContractTest;
+import br.com.caelum.clines.domain.Airport;
 import org.junit.jupiter.api.BeforeEach;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.web.context.WebApplicationContext;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.util.ReflectionTestUtils;
+import org.springframework.util.ReflectionUtils;
 
-@SpringBootTest(classes = ClinesApplication.class)
-public class AirportRegistrationContractTest {
+import java.util.Optional;
 
-    @Autowired
-    private WebApplicationContext context;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.when;
+
+@ContractTest
+public class AirportRegistrationContractTest  {
+
+    @MockBean
+    private AirportRegistrationRepository repository;
+
+    @MockBean
+    private AirportFormToAirport converter;
 
     @BeforeEach
     void setup() {
-        RestAssuredMockMvc.webAppContextSetup(context);
+        when(repository.findByIdentifier("CGH")).thenReturn(Optional.empty());
+        when(repository.findByIdentifier("GRU")).thenReturn(Optional.of(new Airport("GRU", "Gov. André Franco Montoro International Airport")));
+
+        Airport cgh = new Airport("CGH", "Congonhas Airport");
+        ReflectionTestUtils.setField(cgh, "id", 1L);
+
+        when(converter.convert(any(AirportRegistrationController.AirportForm.class))).thenReturn(cgh);
     }
 }
