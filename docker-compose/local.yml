@@ -1,0 +1,10 @@
+version: '3.7'
+
+services:
+  database:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: cline
+    ports:
+      - "5432:5432"
