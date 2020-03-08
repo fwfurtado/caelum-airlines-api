@@ -30,25 +30,8 @@ build/
 ### VS Code ###
 .vscode/
 
-# Created by https://www.gitignore.io/api/java,cmake,eclipse,netbeans,intellij+all,maven,gradle
-# Edit at https://www.gitignore.io/?templates=java,cmake,eclipse,netbeans,intellij+all,maven,gradle
-
-### CMake ###
-CMakeLists.txt.user
-CMakeCache.txt
-CMakeFiles
-CMakeScripts
-Testing
-Makefile
-cmake_install.cmake
-install_manifest.txt
-compile_commands.json
-CTestTestfile.cmake
-_deps
-
-### CMake Patch ###
-# External projects
-*-prefix/
+# Created by https://www.gitignore.io/api/java,eclipse,netbeans,intellij+all,maven,gradle
+# Edit at https://www.gitignore.io/?templates=java,eclipse,netbeans,intellij+all,maven,gradle
 
 ### Eclipse ###
 .metadata
@@ -155,9 +138,6 @@ local.properties
 # .idea/modules
 # *.iml
 # *.ipr
-
-# CMake
-cmake-build-*/
 
 # Mongo Explorer plugin
 .idea/**/mongoSettings.xml
@@ -271,4 +251,4 @@ gradle-app.setting
 ### Gradle Patch ###
 **/build/
 
-# End of https://www.gitignore.io/api/java,cmake,eclipse,netbeans,intellij+all,maven,gradle
+# End of https://www.gitignore.io/api/java,eclipse,netbeans,intellij+all,maven,gradle
