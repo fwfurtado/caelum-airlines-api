@@ -1,0 +1,6 @@
+!src/
+!.mvn/
+!pom.xml
+!mvnw
+target/
+docker-compose/
